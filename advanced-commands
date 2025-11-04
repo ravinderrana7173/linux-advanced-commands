@@ -1,7 +1,19 @@
-             ( find command)
+             ( Find Command)
 
 find . -maxdepth 1 -user root -exec ls -ld {} +    ( use for search files owned by root or specific user )
 sudo find /var/www -type f -user clzadmin -print   ( # find all files in /var/www owned by user 'clzadmin' ) 
 find / -name tecmint.txt                           ( Find files using Name in current directory )
 find . -type f -perm 0777 -print                   ( Find files with 777 permissions )
 find . -type f -perm 777 -print                    ( Find files without 777 permissions )
+
+
+             ( Grep Command )
+
+ifconfig | grep -A 4 inet
+ifconfig | grep -B  Up                  ( Display the Number of Lines Before or After the Search String )
+find . -name “*.mp3” | grep –i JayZ | grep –vi “remix”  ( To find all of the *.mp3 files from the artist JayZ, but you don’t want any of the remixed tracks.)
+ifconfig | grep -C 2 loop                 ( Prints Number of Lines Around Match )
+ifconfig | grep -c inet6                 ( Count the Number of Matches )
+grep -n "main" setup.py                  ( Search Files by Given String in Linux )
+grep -r “function” *                     ( Search a string Recursively in all Directories )
+zgrep -i error /var/log/syslog.2.gz      ( Search a string in Gzipped Files )
