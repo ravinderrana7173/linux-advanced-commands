@@ -44,3 +44,18 @@ tar -xvf Phpfiles-org.tar --wildcards '*.php'
 tar -zxvf Phpfiles-org.tar.gz --wildcards '*.php'              ( Extract a Group of Files Using Wildcard in Linux )
 tar -jxvf Phpfiles-org.tar.bz2 --wildcards '*.php'
 tar -rvf MyImages-14-09-12.tar.gz xyz.txt                      ( Appending Files to an Existing Archive )
+tar -czf - tecmint-14-09-12.tar xyz.txt | wc -c                ( Checking Tar Archive File Size )
+tar --delete -f backup.tar.gz file1.txt
+tar --delete -f backup.tar.gz '/home/tecmint/uploads'          ( Removing Files From a Tar Archive )
+tar -xvf backup.tar.gz --wildcards '*.png'                     ( Extracing File Extension From a Tar Archive )
+
+            ( PS Command )
+
+ps                     ( Display all running process in linux )
+ps au                  ( Display all processes in BSD format.)
+ps -fU tecmint         (  To display a user’s processes by real user ID (RUID) or name, use the -U flag.)
+ps -U root -u root     ( Print All Processes Running as Root (Real and Effective ID)) 
+
+
+
+
