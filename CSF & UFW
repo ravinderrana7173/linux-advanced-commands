@@ -1,0 +1,24 @@
+                  ( UFW firewall )
+sudo ufw status                            ( Check the status )
+sudo ufw enable                           ( If it’s inactive, enable it: )
+sudo ufw allow from 203.0.113.25          ( This allows all ports for that IP )
+sudo ufw allow from 203.0.113.25 to any port 22  ( This allows that IP to access SSH (port 22) only.)
+sudo ufw deny from 203.0.113.25            ( To block all traffic from a specific IP:)
+sudo ufw deny from 203.0.113.25 to any port 80  ( This blocks that IP from accessing HTTP (port 80).)
+sudo ufw status numbered                    ( To delete a rule, first list them:)
+sudo ufw delete 2                           ( Then delete the rule by number:)
+
+
+
+                  ( CSF Firewall )
+
+🧾 Important Files & Commands
+Function	                Command / File
+Install CSF	              wget https://download.configserver.com/csf.tgz → extract and run sh install.sh
+Config file              	/etc/csf/csf.conf
+Start/Stop firewall	      csf -e / csf -x
+Check status	            csf -l
+Allow IP                	csf -a <IP>
+Deny IP	                  csf -d <IP>
+Remove IP	                  csf -r
+Test mode                 (default after install)	TESTING = "1" → change to 0 in csf.conf for full protection
