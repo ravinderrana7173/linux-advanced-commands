@@ -8,7 +8,7 @@ find . -type f -perm 777 -print                    ( Find files without 777 perm
 
 
               ( Grep Command )
-
+grep -l "dogs" *.html                   ( Search a string in html Files )
 ifconfig | grep -A 4 inet
 ifconfig | grep -B  Up                  ( Display the Number of Lines Before or After the Search String )
 find . -name “*.mp3” | grep –i JayZ | grep –vi “remix”  ( To find all of the *.mp3 files from the artist JayZ, but you don’t want any of the remixed tracks.)
@@ -74,3 +74,13 @@ uniq -i linux-distributions.txt     ( Remove Duplicates with Case Insensitive )
 uniq -d linux-distributions.txt     ( Print Only Duplicate Lines from a File )
 uniq -u linux-distributions.txt     ( Print Only Unique Lines from a File )
 
+
+              ( Sed Command & AWK Command )
+
+sed '4 i #This is the extra line' sedtest.txt    ( sed: Prepend and Append Lines )
+sed '4 i #This is the extra line' sedtest.txt > newsedtest.txt  ( create  new file & apend data into new file )
+
+
+awk '($3 == "Toyota") {print}' names.txt          ( You can use AWK to find all the people that drive a Toyota.)
+awk '($5 < 1945) {print $2}' names.txt           
+awk '{total += $5} END {print total/NR}' names.txt     ( AWK: Numeric Comparisons and Calculations Using AWK )
